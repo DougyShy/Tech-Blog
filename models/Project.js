@@ -16,7 +16,7 @@ Project.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     date_created: {
       type: DataTypes.DATE,
@@ -26,6 +26,7 @@ Project.init(
     needed_funding: {
       type: DataTypes.FLOAT,
       allowNull: false,
+      defaultValue: 0.00,
     },
     user_id: {
       type: DataTypes.INTEGER,
