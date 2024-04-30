@@ -37,6 +37,10 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const helloWorld = () => {
+  console.log('TEST');
+};
+
 document
   .querySelector('.new-blog-form')
   .addEventListener('submit', newFormHandler);
