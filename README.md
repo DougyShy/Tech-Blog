@@ -31,7 +31,7 @@ No installation is necessary for this project. Dependencies are listed below.
 
  This project allows a user to view tech blogs on a tech blog website. 
 
- - The user will be able to view blogs, create blogs if login in, and (in the works: comment) on blogs
+ - The user will be able to view blogs, create blogs if logged in, and (in the works: comment) on blogs
  - The user will be able to add and delete blogs
 
  - (FUTURE DEV) - Everything is up and running except for COMMENT functionality
