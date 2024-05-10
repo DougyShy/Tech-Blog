@@ -42,10 +42,17 @@ router.get('/blog/:id', async (req, res) => {
       ],
     });
 
+    const commentsData = await Comment.findAll({
+      where: {
+        blog_id: req.params.id
+      }
+    });
+
     const blog = blogData.get({ plain: true });
+    const blogComments = commentsData.map((comment) => comment.get(({ plain: true})));
 
     res.render('blog', {
-      ...blog,
+      ...blog, blogComments,
       logged_in: req.session.logged_in
     });
   } catch (err) {
