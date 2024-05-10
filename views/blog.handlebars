@@ -3,17 +3,22 @@
   <p>{{{get_emoji}}}</p>
   <p><h2>{{description}}</h2></p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <form>
-      <button class="btn btn-primary" type="submit">Comment on this Blog</button>
-    </form>
-  </p>
-  <p>
+  {{#if logged_in}}
+    <p>
+      <form>
+        <button class="btn btn-primary" type="submit">Comment on this Blog</button>
+        <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
+      </form>
+    </p>
+    <p>
+  {{/if}}
     <h2>COMMENTS:</h2>
     {{#each blogComments as |comment| }}
     <div>
       <p>--- {{ comment.content }} ---</p>
+      <p>Comment by {{comment.user.name}} on {{format_date comment.date_created}}</p>
     </div>
     {{/each}}
   </p>
   </div>
+
