@@ -1,5 +1,6 @@
 <div class="text-center">
   <h2>{{name}}</h2>
+  <p>Current user ID: {{current_user_id}}</p>
   <p>{{{get_emoji}}}</p>
   <p><h2>{{description}}</h2></p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
@@ -13,11 +14,17 @@
     <p>
   {{/if}}
     <h2>COMMENTS:</h2>
-    {{#each blogComments as |comment| }}
+    {{#each blogComments as |comment|}}
+
     <div>
       <p>--- {{ comment.content }} ---</p>
       <p>Comment by {{comment.user.name}} on {{format_date comment.date_created}}</p>
+      <!--<p>Comment User ID: {{comment.user.id}} Current User ID: {{../current_user_id}} </p>-->
+      {{#if (compare comment.user.id '==' ../current_user_id)}}
+        <p> THIS IS YOUR COMMENT </p>
+      {{/if}}
     </div>
+
     {{/each}}
   </p>
   </div>

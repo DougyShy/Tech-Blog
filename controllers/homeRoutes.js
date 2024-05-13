@@ -37,7 +37,7 @@ router.get('/blog/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['name', 'id'],
         },
       ],
     });
@@ -48,16 +48,20 @@ router.get('/blog/:id', async (req, res) => {
       },
       include: {
         model: User,
-        attributes: ['name'],
+        attributes: ['name', 'id'],
       }
     });
 
     const blog = blogData.get({ plain: true });
     const blogComments = commentsData.map((comment) => comment.get(({ plain: true})));
+    const username = req.session.user_id;
+    console.log(username)
 
     res.render('blog', {
       ...blog, blogComments,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      current_user_id: req.session.user_id
+
     });
   } catch (err) {
     res.status(500).json(err);

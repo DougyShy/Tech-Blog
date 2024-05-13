@@ -19,4 +19,11 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  compare : function (variableOne, comparator, variableTwo) {
+      if (eval(variableOne + comparator + variableTwo)) {
+        return true
+      } else {
+        return false
+      }
+   },
 };
