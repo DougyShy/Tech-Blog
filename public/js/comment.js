@@ -21,8 +21,27 @@ const contentFormHandler = async (event) => {
         }
       }
     };
+
+    const delButtonHandler = async (event) => {
+      if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id');
+    
+        const response = await fetch(`/api/comments/${id}`, {
+          method: 'DELETE',
+        });
+    
+        if (response.ok) {
+          document.location.reload();
+        } else {
+          alert('Failed to delete comment');
+        }
+      }
+    };
     
     document
-        .querySelector('.comment-form')
-        .addEventListener('submit', contentFormHandler); 
+      .querySelector('.comment-form')
+      .addEventListener('submit', contentFormHandler); 
 
+    document
+      .querySelector('.comment-list')
+      .addEventListener('click', delButtonHandler);
