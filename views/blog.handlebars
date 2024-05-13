@@ -16,15 +16,13 @@
     <div class="comment-list"> 
       <h2>COMMENTS:</h2>
       {{#each blogComments as |comment|}}
-
-      <div class="comment-list">
-        <p>--- {{ comment.content }} ---</p>
-        <p>Comment by {{comment.user.name}} on {{format_date comment.date_created}}</p>
-        {{#if (compare comment.user.id '==' ../current_user_id)}}
-          <p> <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button></p>
-        {{/if}}
-      </div>
-
+        <div>
+          <p>--- {{ comment.content }} ---</p>
+          <p>Comment by {{comment.user.name}} on {{format_date comment.date_created}}</p>
+          {{#if (compare comment.user.id '==' ../current_user_id)}}
+            <p> <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button></p>
+          {{/if}}
+        </div>
       {{/each}}
   </div>
 
