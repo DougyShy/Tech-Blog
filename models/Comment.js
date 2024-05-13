@@ -13,6 +13,7 @@ Comment.init(
     },
     content: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,
@@ -32,6 +33,7 @@ Comment.init(
         model: 'blog',
         key: 'id',
       },
+      allowNull: false,
     },    
   },
   {
