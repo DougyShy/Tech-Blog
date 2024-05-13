@@ -1,9 +1,9 @@
 # Tech Blog Website
 Basic blog site based around the tech industry 
 
-  This project creates a semi-social platform where users can read and create blogs. 
-
-  * Comments coming soon
+  This project creates a semi-social platform where users can read, comment on, and create blogs. Any visitor can view all blogs as well as 
+  their comments. Once a user signs up or signs in they can start created their own blogs and they can start commenting of the blogs of others as 
+  well as their own. The user my delete any comments or blogs that they created so long as they are signed in.
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -34,10 +34,11 @@ No installation is necessary for this project. Dependencies are listed below.
  - The user will be able to view blogs, create blogs if logged in, and (in the works: comment) on blogs
  - The user will be able to add and delete blogs
 
- - (FUTURE DEV) - Everything is up and running except for COMMENT functionality
- - (FUTURE DEV) - This app has little to no error control implemented at this point with respect to user input (short of SQL defaults)
+ - (UPDATE) - Comments can now be created and deleted by the user on blogs 
 
-Here is a link to a function, deployed application ** HEROKU WAS NOT WORKING **
+ - (FUTURE DEV) - This app has little to no error control implemented at this point with respect to user input (short of SQL defaults). However, security modules have been applied to sessions, passwords, and authorization.  
+
+Here is a link to a functional, deployed application: https://tech-blog-mod-14-b33ea592c917.herokuapp.com/
 
 ## License
 

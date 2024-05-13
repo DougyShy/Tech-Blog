@@ -54,8 +54,6 @@ router.get('/blog/:id', async (req, res) => {
 
     const blog = blogData.get({ plain: true });
     const blogComments = commentsData.map((comment) => comment.get(({ plain: true})));
-    const username = req.session.user_id;
-    console.log(username)
 
     res.render('blog', {
       ...blog, blogComments,
